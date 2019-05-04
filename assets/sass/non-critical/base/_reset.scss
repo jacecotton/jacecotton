@@ -1,0 +1,22 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  background-color: transparent;
+}
+
+::selection {
+  background-color: rgba(97, 177, 243, .5);
+  color: inherit;
+  text-shadow: none;
+}

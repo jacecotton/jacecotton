@@ -1,0 +1,32 @@
+{% extends "layouts/base.njk" %}
+{% block body %}
+<div class="wrapper">
+  <h2 class="heading">Let's get in touch</h2>
+
+  <p class="paragraph">
+    I am currently available for work. You may contact me using the form below, or by email at <strong>jacecotton@gmail.com</strong>. I will get back with you within 2–4 business days.
+  </p>
+
+  <form action="/contact" method="post" class="contact-form">
+    <label for="name" class="contact-form__label">Full name</label>
+    <input required type="text" name="name" class="contact-form__field" placeholder="e.g. John Smith...">
+
+    <label for="email" class="contact-form__label">Email address</label>
+    <input required type="email" name="email" class="contact-form__field" placeholder="e.g. johnsmith@email.com...">
+
+    <label for="subject" class="contact-form__label">
+      Subject
+      <small class="contact-form__label__note">- optional</small>
+    </label>
+    <input type="text" name="subject" class="contact-form__field" placeholder="e.g. Hello!">
+
+    <label for="message" class="contact-form__label">Message</label>
+    <textarea required name="message" rows="10" class="contact-form__field" placeholder="Type your message here..."></textarea>
+
+    <div class="contact-form__buttons">
+      <button class="contact-form__button contact-form__button--affirmative">Send</button><!--
+      --><button type="reset" class="contact-form__button contact-form__button--destructive">Start over</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+@import "../../abstracts/_variables";
+@import "../../abstracts/_mixins";
+
+.main-menu {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 1em;
+    font-size: 0.9rem;
+  }
+
+  &__link.active {
+    border-color: map-get($colors, blue);
+  }
+}
+
+@include at-least(tablet) {
+  .main-menu {
+    &__item {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include at-least(max-viewport) {
+  .main-menu {
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin: 0 0 1em;
+    }
+  }
+}

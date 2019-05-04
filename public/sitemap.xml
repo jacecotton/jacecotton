@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jacecotton.com/</loc>
+    <priority>1</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/portfolio/jwi</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/portfolio/artisan</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/portfolio/brick-mortar</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/portfolio/seadusk</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://jacecotton.com/terms</loc>
+    <priority>0.3</priority>
+  </url>
+</urlset>

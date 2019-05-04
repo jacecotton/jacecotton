@@ -1,0 +1,10 @@
+// Breakpoint mixin. Responds to breakpoints defined in the $breakpoints map in _variables.scss.
+@mixin at-least($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}

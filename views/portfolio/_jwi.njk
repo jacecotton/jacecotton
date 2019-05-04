@@ -1,0 +1,131 @@
+<div class="wrapper">
+  <header>
+    <h2 class="heading">
+      Project Case Study:
+      <span class="big-title">{{ name }}</span>
+    </h2>
+
+    <div class="live-link">
+      <a href="https://www.jacksonwarreninteriors.com/" title="Jackson Warren Interiors" target="_blank" rel="noopener noreferrer">View live site</a>
+    </div>
+
+  </header>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/jwi/large/home.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/home.jpg" alt="A screenshot of what Jackson Warren Interiors looks like upon initial visit.">
+    </a>
+    <figcaption>
+      Jackson Warren Interior's landing (home) page.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph paragraph--center">
+    {{description}}
+  </p>
+
+  <p class="paragraph paragraph--note">
+    <strong>DISCLAIMER:</strong> All images, text content, designs, and other property shown herein is copyrighted by Jackson Warren Interiors.
+  </p>
+
+  <figure class="half-half">
+    <a href="/images/portfolio/jwi/large/home-mobile.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/home-mobile.jpg" alt="A screenshot of what Jackson Warren Interiors looks like upon initial visit on a mobile device.">
+    </a>
+
+    <a href="/images/portfolio/jwi/large/portfolio-mobile.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/portfolio-mobile.jpg" alt="A screenshot of what Jackson Warren Interiors' Portfolio page looks like on mobile.">
+    </a>
+
+    <figcaption>Home (mobile)</figcaption>
+
+    <figcaption>Portfolio (mobile)</figcaption>
+  </figure>
+
+  <p class="paragraph">
+    This is a project done for my senior class in my Web Development AAS program (Project Analysis &amp; Design). As a class, we examined the process of building a website from initial client contact, to deployment and post-launch client services.
+  </p>
+
+  <p class="paragraph">
+    Working with all of my classmates (a team of seven), I wore the "front-end web developer" hat (a.k.a. "production artist"), helping to draft the initial sitemap proposal, create site wireframes in Adobe XD, and code the front-end with HTML, CSS, and Javascript. I also worked with the back-end developer (a.k.a. "programmer") to integrate the design into a Wordpress back-end.
+  </p>
+
+  <p class="paragraph">
+    Jackson Warren Interiors was my proposal for a real-world client to work with over the semester. As such, I also initiated client contact, coordinated and attended meetings throughout the term, and served as the intermediary between them and my class.
+  </p>
+
+  <p class="paragraph">
+    The firm's partners have a very discerning design taste, which is reflected in the clean, modern æsthetic sense of the website.
+  </p>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/jwi/large/portfolio-desktop.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/portfolio-desktop.jpg" alt="A longform screenshot of Jackson Warren Interiors' Portfolio page.">
+    </a>
+    <figcaption>
+      Jackson Warren Interiors "Portfolio" page (zoomed out).
+    </figcaption>
+  </figure>
+
+  <p class="paragraph">
+    One of the most challenging, but rewarding, aspects of the site's implementation was the gallery's mosaic grid system. The images had a wide variety of sizes and proportions, which I wanted to preserve as much as possible. At the same time, the clients didn't want a square grid, wanted no vertical space, and an even horizontal space between the images.
+  </p>
+
+  <p class="paragraph">
+    The first step was to make the images all the same height, so each row is 200 pixels tall. I first let the images fall where they may, which of course resulted in empty gaps of various sizes at the end of each row. In order to maintain an even spacing between the images, we'd essentially have to scale the height of each row on an individual basis until its images became proportionately wide enough to fill the gap.
+  </p>
+
+  <p class="paragraph">
+    However, I really wanted to avoid using Javascript as a layout solution. Furthermore, because we were integrating the design into a Wordpress back-end, we could not manually control each the size of each image at an individual level, as the clients needed to be able to easily add new images on their own after launch. The grid system needed to be robust enough to automatically work with any number of images at any number of proportions.
+  </p>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/jwi/large/portfolio-lightbox.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/portfolio-lightbox.jpg" alt="A screenshot of a portfolio item.">
+    </a>
+    <figcaption>
+      A lightbox view of a gallery item.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph">
+    So what I did was tag every image as <em>roughly</em> either "portrait" (taller than wide) or "landscape" (wider than tall). I then fit each image in a container that was either 150&times;200 pixels (portrait) or 300&times;200 pixels (landscape). The image inside the containers would then be centered, and any overflow would be hidden (cropped). While this didn't quite preserve the proportions of the original images, the cropping margins were negligible.
+  </p>
+
+  <p class="paragraph">
+    Problem: the unpredictable order of the images resulted in rows that would sometimes have a portrait's worth of space remaining at the end, but the next image was landscape-sized, resulting in a blank space.
+  </p>
+
+  <p class="paragraph">
+    I solved this with <code>flex-grow</code>, which essentially "stretches" the items in a row to take up the entire space. Because it was stretching the item <em>containers</em>, not the images, this worked like a charm. There are some instances where some images are quite cropped, but never as dramatically as square-cropping, and the images never stretch out of proportion.
+  </p>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/jwi/large/portfolio-stretchy.png" class="glightbox">
+      <img src="/images/portfolio/jwi/small/portfolio-stretchy.jpg" alt="A screenshot of the portfolio grid.">
+    </a>
+    <figcaption>
+      Portfolio item containers stretching to fit by cropping the images by negligible margins. The viewport width here only allows five portrait items, or in the case of the top two rows, one landscape item and three portrait.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph">
+    The resulting simplicity of the code was satisfactory at this point, and the grid behavior worked to maintain the original proportions and boundaries of the images as much as possible. All the clients have to do in the back-end is upload their images and tag them as either "portrait" or "landscape". 🙌
+  </p>
+
+  <hr>
+
+  <p class="paragraph">
+    Other notes:
+  </p>
+
+  <ul>
+    <li>Other technical features implemented include integration with a Google Maps API, a randomly cycled hero image on the main page, and a fully functional contact form.</li>
+    <li>For the lightbox functionality, I had survived this far without using jQuery, so I did not want to introduce it as a dependency just for the lightbox plugin. I eventually found a simple and lightweight library called <a href="https://github.com/biati-digital/glightbox" target="_blank" rel="noopener noreferrer" title="glightbox by @biata-digital on Github">glightbox</a> by biata-digital on Github, affording us a performance win.</li>
+  </ul>
+
+  <footer>
+    <a href="https://www.jacksonwarreninteriors.com/" title="Jackson Warren Interiors" target="_blank" rel="noopener noreferrer">View live site</a>
+  </footer>
+
+</div>

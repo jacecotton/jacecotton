@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+  color: map-get($colors, blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-color: map-get($colors, blue);
+  }
+}
+
+img {
+  max-width: 100%;
+  border: none;
+}
+
+button,
+input {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-moz-focus-inner {
+    border: none;
+    padding: 0;
+  }
+}
+
+nav ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+}

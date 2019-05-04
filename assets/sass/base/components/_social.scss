@@ -1,0 +1,52 @@
+@import "../../abstracts/_variables";
+@import "../../abstracts/_mixins";
+
+.social-menu {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &__vector {
+    fill: map-get($colors, light-gray-fg);
+    transition: fill 0.1s ease-in;
+  }
+
+  &__link {
+    box-sizing: unset;
+    padding: .8em;
+
+    &:hover {
+      border-color: transparent;
+      
+      .github {
+        fill: #000;
+      }
+
+      .twitter {
+        fill: #1da1f2;
+      }
+
+      .linkedin {
+        fill: #007bb6;
+      }
+    }
+  }
+}
+
+@include at-least(max-viewport) {
+  .social-menu {
+    &__list {
+      justify-content: flex-start;
+    }
+
+    &__item:first-of-type &__link {
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+
+  <!-- Global styles (critical). -->
+  <style>{{ css }}</style>
+
+  <!-- Local styles (critical). -->
+  <style>{{ localcss }}</style>
+
+  <!-- Global styles (deferred). -->
+  <noscript data-load="non-critical-css">
+    <link rel="stylesheet" href="/css/non-critical.css">
+  </noscript>
+
+  <link rel="sitemap" href="/sitemap.xml">
+  <link rel="canonical" href="https://jacecotton.com/">
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+  <!-- Skips logo/navigation to main content for accessibility reasons. -->
+  <!-- See: https://webaim.org/techniques/skipnav/ -->
+  <a href="#main-content" class="skip-to">Skip to main content</a>
+
+  <!-- root container -->
+  <div class="container">
+    <!-- header -->
+    {% include "partials/_header.njk" %}
+
+    <!-- main content -->
+    <main id="main-content">
+      {% block body %}{% endblock %}
+    </main>
+
+    <!-- footer -->
+    {% include "partials/_footer.njk" %}
+  </div>
+
+<!-- Global scripts. -->
+<script>{{ js }}</script>
+
+<!-- Local scripts. -->
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,100 @@
+@import "abstracts/_variables.scss";
+@import "abstracts/_mixins.scss";
+
+@include at-least(tablet) {
+  .top {
+    position: fixed;
+    right: 1%;
+    bottom: 3%;
+    padding: 1rem 2rem;
+    background-color: #fff;
+  }
+}
+
+.glightbox:hover {
+  border-color: transparent;
+}
+
+.heading:first-of-type {
+  margin-bottom: 0;
+}
+
+.paragraph:first-of-type {
+  text-align: center;
+}
+
+.live-link {
+  text-align: center;
+}
+
+.image-wide {
+  margin: 3rem 0;
+}
+
+.half-half {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 3rem 0;
+
+  .thumbnail {
+    width: 91%;
+    margin-top: -34px;
+  }
+}
+
+figcaption {
+  padding: 0 10%;
+  text-align: center;
+  font-size: .9rem;
+  color: map-get($colors, med-gray-fg);
+}
+
+pre, code {
+  border: 2px solid rgba(0, 0, 0, .1);
+  background-color: map-get($colors, light-gray-bg);
+  border-radius: 3px;
+  padding: .1em .3em;
+  color: map-get($colors, hot-pink);
+  font-family: "Fira Code", "Source Code Pro", Monaco, Consolas, monospace;
+  font-size: 1rem;
+}
+
+pre {
+  margin: 3rem 0;
+  padding: 1em;
+  position: relative;
+
+  &[data-lang]::before {
+    display: block;
+    position: absolute;
+    font-weight: 700;
+    color: map-get($colors, dark-gray-fg);
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+  }
+
+  &[data-lang="html"]::before {
+    content: "HTML";
+  }
+
+  &[data-lang="css"]::before {
+    content: "CSS";
+  }
+
+  &[data-lang="js"]::before {
+    content: "Javascript";
+  }
+}
+
+hr {
+  margin: 3rem auto;
+  width: 70%;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, .15);
+}
+
+.wrapper ul {
+  margin: 0 0 3rem 3rem;
+}

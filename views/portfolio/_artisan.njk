@@ -1,0 +1,150 @@
+<div class="wrapper">
+  <header>
+    <h2 class="heading">
+      Project Case Study:
+      <span class="big-title">{{ name }}</span>
+    </h2>
+
+    <div class="live-link">
+      <a href="https://github.com/jacecotton/artisan" title="Artisan on Github by Jace Cotton" target="_blank" rel="noopener noreferrer">View source code on Github</a>
+    </div>
+
+  </header>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/artisan/large/hero.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/hero.jpg" alt="A screenshot of what Artisan looks like upon initial visit.">
+    </a>
+    <figcaption>
+      The landing page with a stock hero image. Image credit to Jazmin Quaynor via Unsplash.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph paragraph--center">
+    {{description}}
+  </p>
+
+  <figure class="half-half">
+    <a href="/images/portfolio/artisan/large/hero-mobile.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/hero-mobile.jpg" alt="A screenshot of what Artisan looks like upon initial visit on a mobile device.">
+    </a>
+
+    <img src="{{ thumbnail }}" alt="A poster graphic representing Artisan." class="thumbnail">
+
+    <figcaption>Mock mobile view</figcaption>
+    <figcaption>Graphic representation</figcaption>
+  </figure>
+
+  <p class="paragraph">
+    This landing page was a self-assigned exercise in 1) advanced layout techniques, and 2) art direction, implementing a specific æsthetic criterion described above.
+  </p>
+
+  <p class="paragraph">
+    For the first point, because this was a simple landing page, I wanted a design pattern that was unique and perhaps unorthodox, yet still logical, familiar, and most importantly, <em>usable</em>.
+  </p>
+
+  <p class="paragraph">
+    One of the most interesting challenges was in arranging the markup for the layout. I knew I wanted the layout as a whole to use CSS flexbox, as from a macro perspective, it is essentially two side-by-side columns (header + main content). However, the difficulty in this would be the stationary header.
+  </p>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/artisan/large/scroll-to-about.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/scroll-to-about.jpg" alt='A screenshot of what Artisan looks like at the "About" section.'>
+    </a>
+
+    <figcaption>
+      Viewport scrolled to the "About" section. Note the unchanged header position, an expected feature for this layout pattern. Image credit to Ryan Holloway via Unsplash.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph">
+    This is because simply slapping <code>position: fixed</code> on the header would take it out of the document flow, causing the main content to shift over, effectively ignoring it. This would require too many <code>&lt;div&gt;</code> wrappers or <a href="https://css-tricks.com/magic-numbers-in-css/" target="_blank" rel="noopener noreferrer" title="Magic Numbers in CSS on CSS-Tricks">magic numbers in CSS</a> to mitigate, which would fail to leverage the power flexbox imparts. The idea behind using it for this project was to keep the markup clean and concise, and the stylesheet robust and DRY.
+  </p>
+
+  <p class="paragraph">
+    My solution to this was to make the site's entire container stationary and have a maximum height of 100% of the viewport, while the <i>main content</i> had its <em>own</em> scrolling context. So, you're never actually scrolling through the page itself, but rather within the main content's container.
+  </p>
+
+  <figure class="image-wide">
+    <a href="/images/portfolio/artisan/large/scroll-to-services.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/scroll-to-services.jpg" alt='A screenshot of what Artisan looks like at the "Services" section.'>
+    </a>
+    <figcaption>
+      Viewport scrolled to the "Services" section.
+    </figcaption>
+  </figure>
+
+  <p class="paragraph">
+    Essentially it was accomplished like this:
+  </p>
+
+  <pre data-lang="html">&lt;div class="container"&gt;
+  &lt;header&gt;
+    ...header content here...
+
+    &lt;nav&gt;
+      ...navigation items...
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    ...main content here...
+  &lt;/main&gt;
+
+&lt;/div&gt;</pre>
+
+  <pre data-lang="css">body {
+  overflow-y: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  overflow-y: auto;
+}</pre>
+
+  <p class="paragraph">
+    Simple, but unusual.
+  </p>
+
+  <hr>
+
+  <p class="paragraph">
+    The second biggest challenge was in how the header and navigation menu would behave responsively. This project is rare in that I didn't design it mobile-first, due to the first point of the exercise previously mentioned. However, if this were a real project (and if I were to do this over again), I'd develop it mobile-first and work from there.
+  </p>
+
+  <p class="paragraph">
+    Due to the small amount of menu items, I knew I didn't want a hamburger menu, and instead opted for a fixed-positioned menu bar at the bottom.
+  </p>
+
+  <p class="paragraph paragraph--note">
+    This is a rule of thumb I picked up from <a href="https://www.smashingmagazine.com/2017/05/basic-patterns-mobile-navigation/" title="Basic Patterns For Mobile Navigation: Pros And Cons" target="_blank" rel="noopener noreferrer">Basic Patterns For Mobile Navigation: Pros And Cons</a> on <i>Smashing Magazine</i>. Good read. 👍
+  </p>
+
+  <p class="paragraph">
+    Ultimately what I settled upon was turning the sidebar header into a non-fixed, full-width header that stayed at the top, while the navigation menu alone would remain fixed. This was simple enough, as <code>position: fixed</code> could now be used because I <em>did</em> want to take it out of the document flow.
+  </p>
+
+  <hr>
+
+  <p class="paragraph">
+    The rest of the page—the main content—comprised various layout experiments, like transitioning a section with a triangle, or putting two contrasting sections side-by-side that featured parallel content. The aesthetic goals were accomplished through the use of dark textures contrasted with white and a warm, pastel, almost wood-colored gold.
+  </p>
+
+  <figure class="half-half">
+    <a href="/images/portfolio/artisan/large/mobile-scroll-to-hero.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/mobile-scroll-to-hero.jpg" alt="A screenshot of what Artisan looks like upon scrolling past the hero on a mobile device.">
+    </a>
+    <a href="/images/portfolio/artisan/large/mobile-scroll-to-ribbon.png" class="glightbox">
+      <img src="/images/portfolio/artisan/small/mobile-scroll-to-ribbon.jpg" alt="A screenshot of what Artisan looks like upon scrolling to a section transition.">
+    </a>
+  </figure>
+
+  <footer>
+    <a href="https://github.com/jacecotton/artisan" title="Artisan on Github by Jace Cotton" target="_blank" rel="noopener noreferrer">View source code on Github</a>
+  </footer>
+
+</div>

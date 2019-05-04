@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Jace Cotton
+Site: jacecotton.com
+Twitter: @jacecottonco
+Location: Houston, TX
+
+/* SITE */
+Last update: April 30, 2019
+Standards: HTML5, CSS3, ES6
+Software: Node.js

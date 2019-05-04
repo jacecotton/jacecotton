@@ -1,0 +1,67 @@
+@import "./abstracts/_variables.scss";
+@import "./abstracts/_mixins.scss";
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 3rem;
+
+  &__item {
+    width: 214px;
+    margin: 0 1.5rem 3rem 1.5rem;
+
+    &__thumb {
+      display: block;
+      box-shadow: 0 20px 15px -15px rgba(0, 0, 0, .5);
+      transition:
+        box-shadow .1s ease-in,
+        transform .1s ease-in;
+    }
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &:hover &__thumb,
+    &:focus &__thumb {
+      transform: translateY(-1.1%) scale(1.01);
+      box-shadow: 0 25px 35px -15px rgba(0, 0, 0, .5);
+    }
+
+    &:active &__thumb {
+      transition-duration: .05s;
+      transform: translateY(1.1%) scale(.99);
+      box-shadow: 0 18px 5px -15px rgba(0, 0, 0, .5);
+    }
+
+    &__description {
+      padding-top: 2em;
+      color: map-get($colors, dark-gray-fg);
+      hyphens: auto;
+    }
+
+    &__name {
+      font-weight: 700;
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    grid-gap: 3rem;
+    gap: 3rem;
+    justify-content: center;
+
+    &__item {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+@include at-least(max-viewport) {
+  .portfolio {
+    padding: 0;
+  }
+}

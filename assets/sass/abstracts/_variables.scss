@@ -1,0 +1,28 @@
+$breakpoints: (
+  mobile: 480px,
+  tablet: 720px,
+  desktop: 1024px,
+  max-viewport: 1300px
+);
+
+$colors: (
+  red: #f63a4a,
+  green: #2fd588,
+  blue: #26e,
+  light-blue: #bdf,
+  hot-pink: #e00040,
+
+  dark-gray-bg: #222,
+  med-gray-bg: #eaeaea,
+  light-gray-bg: #f5f5f5,
+
+  dark-gray-fg: #456,
+  med-gray-fg: #767676, // lightest gray allowable for paragraph text color on a white background
+  light-gray-fg: #959595 // ditto for heading text
+);
+
+$font-stack: (Heebo, "Helvetica Neue", Helvetica, sans-serif);
+
+$header-width: 400px;
+
+$col-gap: 7; // in ems, but multipliable by 16 to get value in pixels

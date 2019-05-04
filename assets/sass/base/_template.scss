@@ -1,0 +1,129 @@
+@import "../abstracts/_variables";
+@import "../abstracts/_mixins";
+
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,400,700");
+
+body {
+  padding: 3rem 1rem;
+  line-height: 1.5;
+  font-family: $font-stack;
+  background-color: #fff;
+  color: map-get($colors, dark-gray-fg);
+}
+
+.skip-to {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  transform: translateY(-100%);
+  transition: transform .15s ease-in;
+
+  &:focus {
+    transform: translateY(100%);
+  }
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 70ch;
+  font-size: .9rem;
+}
+
+main {
+  margin: 5rem 0 3rem;
+}
+
+.heading {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  // Keep flush with the top.
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.big-title {
+  display: block;
+  margin: 0 0 3rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.paragraph {
+  margin-bottom: 1rem;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--note {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1em;
+    background-color: map-get($colors, light-gray-bg);
+    color: map-get($colors, dark-gray-fg);
+    border-left: 3px solid map-get($colors, dark-gray-fg);
+
+    &::before {
+      content: "Note";
+      position: absolute;
+      top: 0;
+      left: 1em;
+      padding: 0 1em;
+      transform: translateY(-50%);
+      background-color: map-get($colors, dark-gray-fg);
+      color: #fff;
+      font-size: .75em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@include at-least(tablet) {
+  .wrapper {
+    font-size: 1.1rem;
+  }
+}
+
+@include at-least(max-viewport) {
+  body {
+    padding: 6rem;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header main"
+      ". footer";
+    grid-template-columns: $header-width 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: #{$col-gap}rem;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+
+  main {
+    grid-area: main;
+    margin: 0 0 3rem;
+  }
+
+  .heading {
+    text-align: left;
+  }
+
+  .big-title {
+    font-size: 2.2rem;
+  }
+}

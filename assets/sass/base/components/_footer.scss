@@ -1,0 +1,48 @@
+@import "../../abstracts/_variables";
+@import "../../abstracts/_mixins";
+
+.main-footer {
+  font-size: .9rem;
+  text-align: center;
+}
+
+.other-links {
+  margin-bottom: 1rem;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    color: map-get($colors, med-gray-fg);
+    border-bottom: 1px dotted map-get($colors, med-gray-fg);
+
+    &:hover {
+      color: map-get($colors, dark-gray-fg);
+      border-color: map-get($colors, dark-gray-fg);
+    }
+  }
+}
+
+.separator {
+  margin: 0 .3rem;
+  font-weight: 700;
+}
+
+.copyright {
+  color: map-get($colors, med-gray-fg);
+}
+
+@include at-least(max-viewport) {
+  .main-footer {
+    grid-area: footer;
+    text-align: left;
+  }
+
+  .other-links {
+    &__list {
+      justify-content: flex-start;
+    }
+  }
+}

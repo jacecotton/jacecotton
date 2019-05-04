@@ -1,0 +1,101 @@
+@import "abstracts/_variables.scss";
+@import "abstracts/_mixins.scss";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  &__label {
+    margin-bottom: .5em;
+
+    &__note {
+      font-size: .85em;
+      color: map-get($colors, med-gray-fg);
+    }
+  }
+
+  &__field {
+    font-size: .9rem;
+    margin-bottom: 1.5em;
+    padding: .7em;
+    background-color: map-get($colors, light-gray-bg);
+    border: 2px solid transparent;
+    transition:
+      background-color .15s ease-in;
+
+    &:hover {
+      background-color: map-get($colors, med-gray-bg);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: #fff;
+      border-color: map-get($colors, light-blue);
+    }
+
+    &[name="message"] {
+      font-family: $font-stack;
+      font-size: .9rem;
+      resize: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 1.5em;
+    padding: .5em .85em;
+    border: 0;
+    background-color: map-get($colors, med-gray-bg);
+    font-family: $font-stack;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background-color .1s ease-in;
+
+    &:hover {
+      background-color: darken(map-get($colors, med-gray-bg), 5%);
+    }
+
+    &--affirmative:before,
+    &--destructive:before {
+      display: block;
+      content: "";
+      width: 1em;
+      height: 1em;
+      background-size: 100%;
+      margin-right: .7em;
+    }
+
+    &--affirmative {
+      background-color: map-get($colors, green);
+      color: #fff;
+
+      &:hover {
+        background-color: darken(map-get($colors, green), 5%);
+      }
+
+      &:before {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0iYXJjcyI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+);
+      }
+    }
+
+    &--destructive:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0iYXJjcyI+PGxpbmUgeDE9IjE4IiB5MT0iNiIgeDI9IjYiIHkyPSIxOCI+PC9saW5lPjxsaW5lIHgxPSI2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iMTgiPjwvbGluZT48L3N2Zz4=);
+    }
+  }
+}
+
+@include at-least(mobile) {
+  .contact-form {
+    &__buttons {
+      justify-content: flex-start;
+    }
+  }
+}
