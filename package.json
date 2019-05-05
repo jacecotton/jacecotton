@@ -4,7 +4,8 @@
   "description": "Jace Cotton is a web developer and designer in Houston, TX.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "watch": "onchange -i -k '**/*.js' '**/*.css' '**/*.njk' -- npm run start"
   },
   "author": "Jace Cotton",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify-es": "^1.0.4",
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.12.0",
+    "onchange": "^5.2.0"
   }
 }

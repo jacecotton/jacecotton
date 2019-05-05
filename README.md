@@ -1,3 +1,18 @@
+# Setting up
+Install dependencies:
+
 ```bash
-sass --watch assets/sass:public/css --style compressed
+$ npm install
+```
+
+Start Gulp:
+
+```bash
+$ gulp watch
+```
+
+Start server:
+
+```bash
+$ npm run watch
 ```
