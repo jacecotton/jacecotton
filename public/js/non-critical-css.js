@@ -1,0 +1,1 @@
+!function(){let e=document.querySelector("noscript[data-load=non-critical-css]");if(e){(new DOMParser).parseFromString(e.innerHTML,"text/html").documentElement.querySelectorAll("link").forEach(e=>{document.head.appendChild(e)})}}();

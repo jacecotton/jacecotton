@@ -27,7 +27,7 @@ const env = new nunjucks.configure("views", {
 env.addGlobal("title", "Jace Cotton | Web Developer and Designer");
 env.addGlobal("description", "Jace Cotton is a web developer and designer in Houston, TX.");
 env.addGlobal("css", fs.readFileSync("./public/css/main.css"));
-// env.addGlobal("js", fs.readFileSync("./public/js/main.js"));
+env.addGlobal("js", (fs.readFileSync("./public/js/non-critical-css.js") + (fs.readFileSync("./public/js/has-js.js"))));
 
 app.set("view engine", "njk");
 

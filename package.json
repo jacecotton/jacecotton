@@ -13,5 +13,14 @@
     "express": "^4.16.4",
     "nodemailer": "^6.1.1",
     "nunjucks": "^3.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^1.0.4",
+    "node-sass": "^4.12.0"
   }
 }
