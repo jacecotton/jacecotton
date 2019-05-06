@@ -9,7 +9,8 @@
 
   <!-- Loading an external stylesheet is "render blocking", therefore critical styles are compiled
       and imported between <style> tags here. This is done on the server after the stylesheets have
-      been compiled using Sass. See: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery -->
+      been compiled using Sass.
+      See: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css -->
 
   <!-- Global styles (critical). -->
   <style>{{ css }}</style>
@@ -33,8 +34,8 @@
 </head>
 <body>
 
-  <!-- Skips logo/navigation to main content for accessibility reasons. -->
-  <!-- See: https://webaim.org/techniques/skipnav/ -->
+  <!-- Skips logo/navigation to main content for accessibility reasons.
+      See: https://webaim.org/techniques/skipnav/ -->
   <a href="#main-content" class="skip-to">Skip to main content</a>
 
   <!-- root container -->
