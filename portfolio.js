@@ -14,24 +14,17 @@ module.exports = [
   },
 
   {
-    id: "brick-mortar",
-    name: "Brick & Mortar",
-    description: "A three-page spec website theme.",
-    thumbnail: "/images/portfolio/brick-mortar/thumb.jpg"
-  },
-
-  {
-    id: "barista",
-    name: "Barista",
-    description: "An individual portfolio website theme.",
-    thumbnail: "/images/portfolio/barista/thumb.jpg"
-  },
-
-  {
     id: "seadusk",
     name: "Seadusk",
     description: "An individual portfolio website theme.",
     thumbnail: "/images/portfolio/seadusk/thumb.jpg"
+  },
+
+  {
+    id: "brick-mortar",
+    name: "Brick & Mortar",
+    description: "A three-page spec website theme.",
+    thumbnail: "/images/portfolio/brick-mortar/thumb.jpg"
   },
 
   {
@@ -42,9 +35,30 @@ module.exports = [
   },
 
   {
+    id: "barista",
+    name: "Barista",
+    description: "An individual portfolio website theme.",
+    thumbnail: "/images/portfolio/barista/thumb.jpg"
+  },
+
+  {
     id: "sublime",
     name: "Sublime",
     description: "A mock site redesign for Sublime Text 3.",
     thumbnail: "/images/portfolio/sublime/thumb.jpg"
+  },
+
+  {
+    id: "glacier",
+    name: "Glacier",
+    description: "A simple website theme.",
+    thumbnail: "/images/portfolio/glacier/thumb.jpg"
+  },
+
+  {
+    id: "box-model",
+    name: "Box Model",
+    description: "An exercise that dives deep into the CSS box model.",
+    thumbnail: "/images/portfolio/box-model/thumb.jpg"
   }
 ];

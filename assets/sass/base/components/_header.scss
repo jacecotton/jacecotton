@@ -39,6 +39,7 @@
 
 @include at-least(max-viewport) {
   .main-header {
+    position: fixed;
     text-align: left;
   }
 
