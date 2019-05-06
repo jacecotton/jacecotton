@@ -4,6 +4,7 @@ const portfolio = require("./portfolio");
 module.exports = {
   index: (req, res) => {
     res.render("index", {
+      page: "portfolio",
       localcss: fs.readFileSync("./public/css/index.css"),
       portfolio: portfolio
     });
@@ -11,6 +12,7 @@ module.exports = {
 
   about: (req, res) => {
     res.render("about", {
+      page: "about",
       title: "About | Jace Cotton",
       description: "Read more about Jace Cotton, web developer and designer in Houston, TX."
     });
@@ -18,6 +20,7 @@ module.exports = {
 
   contact: (req, res) => {
     res.render("contact", {
+      page: "contact",
       title: "Contact | Jace Cotton",
       description: "Contact Jace Cotton, web developer and designer in Houston, TX.",
       localcss: fs.readFileSync("./public/css/contact.css")
