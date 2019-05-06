@@ -11,8 +11,7 @@ const config = {
   sass: {
     src: "./assets/sass/*.scss",
     dest: "./public/css",
-    style: "compressed",
-    maps: "./maps"
+    style: "compressed"
   },
 
   js: {
@@ -28,8 +27,8 @@ const methods = {
         outputStyle: config.sass.style
       }))
       .pipe(autoprefixer())
-      .pipe(sourcemaps.init())
-      .pipe(sourcemaps.write(config.sass.maps))
+      // .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.write())
       .pipe(gulp.dest(config.sass.dest));
 
     done();

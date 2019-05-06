@@ -21,9 +21,23 @@ module.exports = [
   },
 
   {
+    id: "cycler",
+    name: "Cycler",
+    description: "A proof-of-concept custom shop system.",
+    thumbnail: "/images/portfolio/cycler/thumb.jpg"
+  },
+
+  {
     id: "seadusk",
     name: "Seadusk",
     description: "An individual portfolio website theme.",
     thumbnail: "/images/portfolio/seadusk/thumb.jpg"
+  },
+
+  {
+    id: "barista",
+    name: "Barista",
+    description: "An individual portfolio website theme.",
+    thumbnail: "/images/portfolio/barista/thumb.jpg"
   }
 ];

@@ -41,7 +41,7 @@ main {
 .heading {
   margin: 2rem 0;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
 
@@ -89,6 +89,10 @@ main {
   }
 }
 
+.bullets {
+  margin: 0 0 1em 2em;
+}
+
 @include at-least(tablet) {
   .wrapper {
     font-size: 1.1rem;
@@ -99,7 +103,7 @@ main {
   body {
     padding: 6rem;
   }
-  
+
   .container {
     display: grid;
     grid-template-areas:
