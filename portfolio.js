@@ -21,10 +21,10 @@ module.exports = [
   },
 
   {
-    id: "cycler",
-    name: "Cycler",
-    description: "A proof-of-concept custom shop system.",
-    thumbnail: "/images/portfolio/cycler/thumb.jpg"
+    id: "barista",
+    name: "Barista",
+    description: "An individual portfolio website theme.",
+    thumbnail: "/images/portfolio/barista/thumb.jpg"
   },
 
   {
@@ -35,9 +35,16 @@ module.exports = [
   },
 
   {
-    id: "barista",
-    name: "Barista",
-    description: "An individual portfolio website theme.",
-    thumbnail: "/images/portfolio/barista/thumb.jpg"
+    id: "cycler",
+    name: "Cycler",
+    description: "A proof-of-concept custom shop system.",
+    thumbnail: "/images/portfolio/cycler/thumb.jpg"
+  },
+
+  {
+    id: "sublime",
+    name: "Sublime",
+    description: "A mock site redesign for Sublime Text 3.",
+    thumbnail: "/images/portfolio/sublime/thumb.jpg"
   }
 ];
