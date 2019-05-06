@@ -7,11 +7,19 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
 
+  <!-- Loading an external stylesheet is "render blocking", therefore critical styles are compiled
+      and imported between <style> tags here. This is done on the server after the stylesheets have
+      been compiled using Sass. See: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery -->
+
   <!-- Global styles (critical). -->
   <style>{{ css }}</style>
 
   <!-- Local styles (critical). -->
   <style>{{ localcss }}</style>
+
+  <!-- Non-critical styles (styles that only get applied after a user action, like scrolling or hover)
+      can be loaded asynchronously via Javascript (see script below). This will prevent render blocking,
+      meaning these styles will only be applied after the browser has finished rendering the page. -->
 
   <!-- Global styles (deferred). -->
   <noscript data-load="non-critical-css">
