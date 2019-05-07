@@ -1,16 +1,6 @@
 @import "abstracts/_variables.scss";
 @import "abstracts/_mixins.scss";
 
-@include at-least(tablet) {
-  .top {
-    position: fixed;
-    right: 1%;
-    bottom: 3%;
-    padding: 1rem 2rem;
-    background-color: #fff;
-  }
-}
-
 .glightbox:hover {
   border-color: transparent;
 }

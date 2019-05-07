@@ -11,8 +11,19 @@ body {
   color: map-get($colors, dark-gray-fg);
 }
 
-.skip-to {
+.corner-helper {
   position: absolute;
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1%;
+  bottom: 3%;
+}
+
+.skip-to {
   top: 0;
   left: 3rem;
   transform: translateY(-100%);
