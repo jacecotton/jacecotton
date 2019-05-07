@@ -42,11 +42,12 @@ body {
 .wrapper {
   margin: 0 auto;
   max-width: 70ch;
-  font-size: .9rem;
+  font-size: 1em;
 }
 
 main {
   margin: 5rem 0 3rem;
+  font-size: .9rem;
 }
 
 .heading {
@@ -105,7 +106,7 @@ main {
 }
 
 @include at-least(tablet) {
-  .wrapper {
+  main {
     font-size: 1.1rem;
   }
 }
