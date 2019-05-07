@@ -3,14 +3,18 @@ module.exports = [
     id: "jwi",
     name: "Jackson Warren Interiors",
     description: "A Houston interior design firm.",
-    thumbnail: "/images/portfolio/jwi/thumb.jpg"
+    thumbnail: "/images/portfolio/jwi/thumb.jpg",
+    live: true,
+    site: "https://www.jacksonwarreninteriors.com/"
   },
 
   {
     id: "artisan",
     name: "Artisan",
     description: "A landing page design with a handcrafted æsthetic.",
-    thumbnail: "/images/portfolio/artisan/thumb.jpg"
+    thumbnail: "/images/portfolio/artisan/thumb.jpg",
+    live: true,
+    github: "https://github.com/jacecotton/artisan"
   },
 
   {

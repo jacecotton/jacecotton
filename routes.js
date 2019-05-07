@@ -48,12 +48,17 @@ module.exports = (app) => {
   portfolio.forEach((item) => {
     app.get(`/portfolio/${item.id}`, (req, res) => {
       res.render("portfolio", {
+        page: "portfolio",
         title: `${item.name} | Jace Cotton`,
         localcss: fs.readFileSync("./public/css/portfolio.css"),
         name: item.name,
         id: `portfolio/_${item.id}.njk`,
         description: item.description,
-        thumbnail: item.thumbnail
+        thumbnail: item.thumbnail,
+        live: item.live,
+        github: item.github,
+        demo: item.demo,
+        site: item.site
       });
     });
   });

@@ -16,7 +16,7 @@
   }
 
   &__link.active {
-    border-color: map-get($colors, blue);
+    text-decoration: underline;
   }
 }
 

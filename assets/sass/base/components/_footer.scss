@@ -21,6 +21,7 @@
     &:hover {
       color: map-get($colors, dark-gray-fg);
       border-color: map-get($colors, dark-gray-fg);
+      text-decoration: none;
     }
   }
 }

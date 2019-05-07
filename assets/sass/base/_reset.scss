@@ -16,10 +16,9 @@ html {
 a {
   color: map-get($colors, blue);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
 
   &:hover {
-    border-color: map-get($colors, blue);
+    text-decoration: underline;
   }
 }
 
