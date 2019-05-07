@@ -1,4 +1,3 @@
-const nodemailer = require("nodemailer");
 const fs = require("fs");
 const controllers = require("./controllers");
 const portfolio = require("./portfolio");
@@ -6,44 +5,8 @@ const portfolio = require("./portfolio");
 module.exports = (app) => {
   app.get("/", controllers.index);
   app.get("/about", controllers.about);
-  app.get("/contact", controllers.contact);
-
-  // TO-DO: Need to break this controller into controllers.js
-  app.post("/contact", (req, res) => {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "jacedc98@gmail.com",
-        pass: process.env.GMAIL_PASS,
-      }
-    });
-
-    let { name, email, message } = req.body;
-
-    const mailOptions = {
-      from: "jacedc98@gmail.com",
-      to: "jacedc98@gmail.com, fitzroy3k@gmail.com",
-      subject: "Email from personal portfolio",
-      html: `
-        <strong>From:</strong> ${name} <br>
-        <strong>Sender email:</strong> ${email} <br>
-        <strong>Message:</strong> <br>
-        ${message}
-      `,
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-      if(error) {
-        console.log(error);
-      } else {
-        console.log(`Email sent: ${info.response}`);
-      }
-    });
-
-    res.render("success", {
-      title: "Message Sent | Jace Cotton",
-    });
-  });
+  app.get("/contact", controllers.contact.get);
+  app.post("/contact", controllers.contact.post);
 
   portfolio.forEach((item) => {
     let { name, id } = item;
