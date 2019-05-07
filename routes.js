@@ -46,20 +46,15 @@ module.exports = (app) => {
   });
 
   portfolio.forEach((item) => {
-    app.get(`/portfolio/${item.id}`, (req, res) => {
-      res.render("portfolio", {
-        page: "portfolio",
-        title: `${item.name} | Jace Cotton`,
-        localcss: fs.readFileSync("./public/css/portfolio.css"),
-        name: item.name,
-        id: `portfolio/_${item.id}.njk`,
-        description: item.description,
-        thumbnail: item.thumbnail,
-        live: item.live,
-        github: item.github,
-        demo: item.demo,
-        site: item.site
-      });
+    let { name, id } = item;
+
+    app.get(`/portfolio/${id}`, (req, res) => {
+      res.render("portfolio", {...{
+        page: "portfolio", // tells the menu that the "Portfolio" link is active, so all portfolio items will keep the active class on that link
+        title: `${name} | Jace Cotton`,
+        partial: `portfolio/_${id}.njk`,
+        localcss: fs.readFileSync("./public/css/portfolio.css")
+      },...item}); // merging the data from each object in the `portfolio` array into the object passed through `res.render`, thereby exposing its properties to the njk file.
     });
   });
 
