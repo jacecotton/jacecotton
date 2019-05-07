@@ -9,7 +9,16 @@ module.exports = (app) => {
   app.post("/contact", controllers.contact.post);
 
   portfolio.forEach((item) => {
-    app.get(`/portfolio/${item.id}`, controllers.portfolio(item));
+    app.get(`/portfolio/${item.id}`, (req, res) => {
+      let { name, id } = item;
+
+      res.render("portfolio", {...{
+        page: "portfolio",
+        title: `${name} | Jace Cotton`,
+        partial: `portfolio/_${id}.njk`,
+        localcss: fs.readFileSync("./public/css/portfolio.css"),
+      }, ...item});
+    });
   });
 
   app.get("/privacy", controllers.privacy);

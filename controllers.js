@@ -67,17 +67,6 @@ module.exports = {
     },
   },
 
-  portfolio: (req, res, item) => {
-    let { name, id } = item;
-
-    res.render("portfolio", {...{
-      page: "portfolio",
-      title: `${name} | Jace Cotton`,
-      partial: `portfolio/_${id}.njk`,
-      localcss: fs.readFileSync("./public/css/portfolio.css"),
-    }, ...item});
-  },
-
   privacy: (req, res) => {
     res.render("privacy", {
       title: "Privacy Policy | Jace Cotton"
