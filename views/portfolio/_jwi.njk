@@ -34,7 +34,7 @@
 </p>
 
 <p class="paragraph">
-  Working with all of my classmates (a team of seven), I wore the "front-end web developer" hat (a.k.a. "production artist"), helping to draft the initial sitemap proposal, create site wireframes in Adobe XD, and code the front-end with HTML, CSS, and Javascript. I also worked with the back-end developer (a.k.a. "programmer") to integrate the design into a Wordpress back-end.
+  Working with all of my classmates (a team of seven), I wore the "production artist" hat (front-end developer), helping to draft the initial sitemap proposal, create site wireframes in Adobe XD, and code the front-end with HTML, CSS, and Javascript. I also worked with the back-end developer to integrate the design into a Wordpress back-end.
 </p>
 
 <p class="paragraph">
@@ -58,14 +58,6 @@
   One of the most challenging, but rewarding, aspects of the site's implementation was the gallery's mosaic grid system. The images had a wide variety of sizes and proportions, which I wanted to preserve as much as possible. At the same time, the clients didn't want a square grid, wanted no vertical space, and an even horizontal space between the images.
 </p>
 
-<p class="paragraph">
-  The first step was to make the images all the same height, so each row is 200 pixels tall. I first let the images fall where they may, which of course resulted in empty gaps of various sizes at the end of each row. In order to maintain an even spacing between the images, we'd essentially have to scale the height of each row on an individual basis until its images became proportionately wide enough to fill the gap.
-</p>
-
-<p class="paragraph">
-  However, I really wanted to avoid using Javascript as a layout solution. Furthermore, because we were integrating the design into a Wordpress back-end, we could not manually control each the size of each image at an individual level, as the clients needed to be able to easily add new images on their own after launch. The grid system needed to be robust enough to automatically work with any number of images at any number of proportions.
-</p>
-
 <figure class="image-wide">
   <a href="/images/portfolio/jwi/large/portfolio-lightbox.png" class="glightbox">
     <img src="/images/portfolio/jwi/small/portfolio-lightbox.jpg" alt="A screenshot of a portfolio item.">
@@ -76,15 +68,11 @@
 </figure>
 
 <p class="paragraph">
-  So what I did was tag every image as <em>roughly</em> either "portrait" (taller than wide) or "landscape" (wider than tall). I then fit each image in a container that was either 150&times;200 pixels (portrait) or 300&times;200 pixels (landscape). The image inside the containers would then be centered, and any overflow would be hidden (cropped). While this didn't quite preserve the proportions of the original images, the cropping margins were negligible.
+  Wanting to avoid the use of Javascript as a layout solution, I turned to flexbox. I tagged each image as either "portrait" (taller than wide) or "landscape" (wider than tall), and fit them in a container. This container was either 150&times;200 pixels or 300&times;200 pixels, respectively, with a flex growth factor of 1 or 2, respectively.
 </p>
 
 <p class="paragraph">
-  Problem: the unpredictable order of the images resulted in rows that would sometimes have a portrait's worth of space remaining at the end, but the next image was landscape-sized, resulting in a blank space.
-</p>
-
-<p class="paragraph">
-  I solved this with <code>flex-grow</code>, which essentially "stretches" the items in a row to take up the entire space. Because it was stretching the item <em>containers</em>, not the images, this worked like a charm. There are some instances where some images are quite cropped, but never as dramatically as square-cropping, and the images never stretch out of proportion.
+  This resulted in only a few elegant lines of CSS while maintaining the images' original cropping boundaries as much as possible.
 </p>
 
 <figure class="image-wide">
@@ -97,7 +85,7 @@
 </figure>
 
 <p class="paragraph">
-  The resulting simplicity of the code was satisfactory at this point, and the grid behavior worked to maintain the original proportions and boundaries of the images as much as possible. All the clients have to do in the back-end is upload their images and tag them as either "portrait" or "landscape". 🙌
+  All the clients have to do in the back-end is upload their images and tag them as either "portrait" or "landscape". 🙌
 </p>
 
 <hr>
