@@ -2,7 +2,6 @@
 @import "../../abstracts/_mixins";
 
 .main-header {
-  grid-area: header;
   text-align: center;
 }
 
@@ -39,6 +38,7 @@
 
 @include at-least(max-viewport) {
   .main-header {
+    grid-area: header;
     position: fixed;
     text-align: left;
   }

@@ -67,6 +67,18 @@ module.exports = {
     },
   },
 
+  portfolio: (req, res) => {
+    let object = portfolioQuery(req.params.itemName);
+
+    res.render("portfolio", {...{
+      page: "portfolio",
+      title: `${object.name} | Jace Cotton`,
+      partial: `portfolio/_${req.params.itemName}.njk`,
+      localcss: fs.readFileSync("./public/css/portfolio.css"),
+    }, ...object});
+
+  },
+
   privacy: (req, res) => {
     res.render("privacy", {
       title: "Privacy Policy | Jace Cotton"
@@ -79,3 +91,13 @@ module.exports = {
     });
   }
 };
+
+// Helper function that queries the `portfolio` array based on the dynamic URL
+// parameter, matching "itemName" to `portfolio[i].id`.
+function portfolioQuery(itemName) {
+  for(let i = 0; i < portfolio.length; i++) {
+    if(portfolio[i].id == itemName) {
+      return portfolio[i];
+    }
+  }
+}

@@ -21,7 +21,8 @@ $colors: (
   light-gray-fg: #959595 // ditto for heading text
 );
 
-$font-stack: (Roboto, "Helvetica Neue", Helvetica, sans-serif);
+// Avoiding the use of `system-ui`, don't want to use Segoe UI on Windows.
+$font-stack: (Roboto, BlinkMacSystemFont, -apple-system, "Helvetica Neue", Helvetica, Oxygen, sans-serif);
 
 $header-width: 400px;
 
