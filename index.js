@@ -25,10 +25,13 @@ const env = new nunjucks.configure("views", {
   autoescape: false
 });
 
-env.addGlobal("title", config.defaults.title);
-env.addGlobal("description", config.defaults.description);
-env.addGlobal("css", config.global.css);
-env.addGlobal("js", config.global.js);
+for(let prop in config.defaults) {
+  env.addGlobal(prop, config.defaults[prop]);
+}
+
+for(let prop in config.globals) {
+  env.addGlobal(prop, config.globals[prop]);
+}
 
 app.set("view engine", "njk");
 
