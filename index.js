@@ -3,6 +3,7 @@ const bodyparser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
 const nunjucks = require("nunjucks");
+const config = require("./config");
 
 const app = express();
 
@@ -24,10 +25,10 @@ const env = new nunjucks.configure("views", {
   autoescape: false
 });
 
-env.addGlobal("title", "Jace Cotton | Web Developer and Designer");
-env.addGlobal("description", "Jace Cotton is a web developer and designer in Houston, TX.");
-env.addGlobal("css", fs.readFileSync("./public/css/main.css"));
-env.addGlobal("js", (fs.readFileSync("./public/js/non-critical-css.js") + (fs.readFileSync("./public/js/has-js.js"))));
+env.addGlobal("title", config.defaults.title);
+env.addGlobal("description", config.defaults.description);
+env.addGlobal("css", config.global.css);
+env.addGlobal("js", config.global.js);
 
 app.set("view engine", "njk");
 

@@ -1,6 +1,4 @@
-const fs = require("fs");
 const controllers = require("./controllers");
-const portfolio = require("./portfolio");
 
 module.exports = (app) => {
   app.get("/", controllers.index);
