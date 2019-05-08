@@ -25,10 +25,14 @@ const env = new nunjucks.configure("views", {
   autoescape: false
 });
 
+// Default values for basic configurations like the site title and meta description
+// that may be overridden on a page-by-page basis (in controllers.js).
 for(let prop in config.defaults) {
   env.addGlobal(prop, config.defaults[prop]);
 }
 
+// Global variables for inclusion on every page that won't be overridden on a page-
+// by-page basis.
 for(let prop in config.globals) {
   env.addGlobal(prop, config.globals[prop]);
 }

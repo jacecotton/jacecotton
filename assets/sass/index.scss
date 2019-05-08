@@ -50,5 +50,9 @@
 @include at-least(max-viewport) {
   .portfolio {
     padding: 0;
+
+    &__item {
+      width: calc(33% - 3rem);
+    }
   }
 }
