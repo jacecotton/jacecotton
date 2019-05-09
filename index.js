@@ -44,8 +44,6 @@ app.use((req, res) => {
   res.render("404");
 });
 
-app.set("port", port);
-
-app.listen(app.get("port"), () => {
+app.listen(port, () => {
   console.log(`Server listening on http://${host}:${port}`);
 });
