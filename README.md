@@ -13,7 +13,6 @@ $ npm install
 Start Gulp, then begin watching for changes:
 
 ```bash
-$ gulp
 $ gulp watch
 ```
 

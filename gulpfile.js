@@ -46,8 +46,7 @@ const methods = {
 gulp.task("sass", methods.sass);
 gulp.task("uglify", methods.uglify);
 
-gulp.task("default", gulp.parallel("sass", "uglify"));
-gulp.task("watch", () => {
+gulp.task("default", () => {
   gulp.watch("./assets/sass/", methods.sass);
   gulp.watch("./assets/js/", methods.uglify);
 });
