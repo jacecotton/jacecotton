@@ -7,3 +7,7 @@ document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js");
 
 var dkp=true;
+
+if(!dkp) {
+  document.querySelector(".dkp").style.display = "none";
+}

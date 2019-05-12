@@ -1,1 +1,1 @@
-document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js");var dkp=!0;
+document.documentElement.classList.remove("no-js"),document.documentElement.classList.add("js");var dkp=!0;dkp||(document.querySelector(".dkp").style.display="none");
