@@ -5,3 +5,5 @@
 
 document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js");
+
+var dkp=true;

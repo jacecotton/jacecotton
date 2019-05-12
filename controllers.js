@@ -30,7 +30,6 @@ module.exports = {
     },
 
     post: (req, res) => {
-
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
