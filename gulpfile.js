@@ -8,13 +8,13 @@ const uglify = require("gulp-uglify-es").default;
 sass.compiler = require("node-sass");
 
 const config = {
-  sass: {
+  styles: {
     src: "./assets/sass/*.scss",
     dest: "./public/css",
     style: "compressed"
   },
 
-  js: {
+  scripts: {
     src: "./assets/js/*.js",
     dest: "./public/js"
   }
@@ -47,6 +47,6 @@ gulp.task("sass", methods.sass);
 gulp.task("uglify", methods.uglify);
 
 gulp.task("default", () => {
-  gulp.watch("./assets/sass/", methods.sass);
-  gulp.watch("./assets/js/", methods.uglify);
+  gulp.watch("./assets/styles/", methods.sass);
+  gulp.watch("./assets/scripts/", methods.uglify);
 });

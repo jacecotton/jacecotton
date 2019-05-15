@@ -2,10 +2,11 @@
   "name": "jacecotton",
   "version": "1.0.0",
   "description": "Jace Cotton is a web developer and designer in Houston, TX.",
+  "repository": "git+https://github.com/jacecotton/jacecotton",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "watch": "onchange -i -k '**/*.js' '**/*.css' '**/*.njk' -- npm run start"
+    "dev": "onchange -i -k '**/*.js' '**/*.css' '**/*.njk' -- npm run start"
   },
   "author": "Jace Cotton",
   "license": "ISC",
