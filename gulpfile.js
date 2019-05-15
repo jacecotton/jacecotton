@@ -8,19 +8,19 @@ const uglify = require("gulp-uglify-es").default;
 sass.compiler = require("node-sass");
 
 const config = {
-  styles: {
-    src: "./assets/sass/*.scss",
+  sass: {
+    src: "./assets/styles/*.scss",
     dest: "./public/css",
     style: "compressed"
   },
 
-  scripts: {
-    src: "./assets/js/*.js",
+  js: {
+    src: "./assets/scripts/*.js",
     dest: "./public/js"
   }
 };
 
-const methods = {
+const tasks = {
   sass: function(done) {
     gulp.src(config.sass.src)
       .pipe(sass({
@@ -43,10 +43,10 @@ const methods = {
   }
 }
 
-gulp.task("sass", methods.sass);
-gulp.task("uglify", methods.uglify);
+gulp.task("sass", tasks.sass);
+gulp.task("uglify", tasks.uglify);
 
 gulp.task("default", () => {
-  gulp.watch("./assets/styles/", methods.sass);
-  gulp.watch("./assets/scripts/", methods.uglify);
+  gulp.watch("./assets/styles/", tasks.sass);
+  gulp.watch("./assets/scripts/", tasks.uglify);
 });

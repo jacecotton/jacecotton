@@ -1,1 +1,0 @@
-window.addEventListener("beforeunload",e=>{e.preventDefault(),e.returnValue="",document.querySelector("main").classList.add("page-leave")});

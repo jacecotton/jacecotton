@@ -9,5 +9,5 @@ document.documentElement.classList.add("js");
 var dkp=true;
 
 if(!dkp) {
-  document.querySelector(".dkp").style.display = "none";
+  document.querySelector(".dkp").style.display = "none"; 
 }

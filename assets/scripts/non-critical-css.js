@@ -23,6 +23,6 @@
     linkElement.forEach((link) => {
       document.head.appendChild(link);
     });
-  }
+  } 
 
 })();
