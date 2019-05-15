@@ -45,24 +45,24 @@ module.exports = [
     thumbnail: "/images/portfolio/barista/thumb.jpg"
   },
 
-  {
-    id: "sublime",
-    name: "Sublime",
-    description: "A mock site redesign for Sublime Text 3.",
-    thumbnail: "/images/portfolio/sublime/thumb.jpg"
-  },
-
-  {
-    id: "glacier",
-    name: "Glacier",
-    description: "A simple website theme.",
-    thumbnail: "/images/portfolio/glacier/thumb.jpg"
-  },
-
-  {
-    id: "box-model",
-    name: "Box Model",
-    description: "An exercise that dives deep into the CSS box model.",
-    thumbnail: "/images/portfolio/box-model/thumb.jpg"
-  }
+  // {
+  //   id: "sublime",
+  //   name: "Sublime",
+  //   description: "A mock site redesign for Sublime Text 3.",
+  //   thumbnail: "/images/portfolio/sublime/thumb.jpg"
+  // },
+  //
+  // {
+  //   id: "glacier",
+  //   name: "Glacier",
+  //   description: "A simple website theme.",
+  //   thumbnail: "/images/portfolio/glacier/thumb.jpg"
+  // },
+  //
+  // {
+  //   id: "box-model",
+  //   name: "Box Model",
+  //   description: "An exercise that dives deep into the CSS box model.",
+  //   thumbnail: "/images/portfolio/box-model/thumb.jpg"
+  // },
 ];
