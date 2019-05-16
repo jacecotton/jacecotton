@@ -11,13 +11,13 @@ const config = {
   sass: {
     src: "./assets/styles/*.scss",
     dest: "./public/css",
-    style: "compressed"
+    style: "compressed",
   },
 
   js: {
     src: "./assets/scripts/*.js",
-    dest: "./public/js"
-  }
+    dest: "./public/js",
+  },
 };
 
 const tasks = {
@@ -40,8 +40,8 @@ const tasks = {
       .pipe(gulp.dest(config.js.dest));
 
     done();
-  }
-}
+  },
+};
 
 gulp.task("sass", tasks.sass);
 gulp.task("uglify", tasks.uglify);
