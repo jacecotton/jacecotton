@@ -39,7 +39,6 @@
 @include at-least(max-viewport) {
   .main-header {
     grid-area: header;
-    position: fixed;
     text-align: left;
   }
 
